@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://fontawesome-free-5.15.1/css/all.css">
+     <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Movie</title>
+</head>
+
+<body>
+<!-- nav start -->
+      <nav class="navbar navbar-expand-lg navbar-red navbar-dark custom-nav">
+        <div class="wrapper">
+          
+        </div>
+  <div class="container-fluid all-show">
+   
+    <img src="./img/logo.jpg" id="logo" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link active" aria-current="page" id="home-btn" onclick="autorun()" >Home</a>
+            </li>
+            <li class="nav-item active">
+              <a id="actorsBtn" class="nav-link" href="#">Actors</a>
+            </li>
+            <li class="nav-item dropdown ">
+              <a  class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genres
+              </a>
+              <ul  class="dropdown-menu genre-list" aria-labelledby="navbarDropdown">
+                
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter by
+              </a>
+              <ul id="filter-list" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#"  onclick="aboutPage()" tabindex="-1" >About</a>
+            </li>
+          </ul>
+        
+        </div>
+        
+        
+      </ul>
+
+
+        <div class="d-flex">
+        
+        <div class="search-box">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+          <input data-search type="text" class="input-search" placeholder="Type to Search...">
+        </div>
+        </div>
+    
+    </div>
+  </div>
+</nav>
+    <div class="container d-flex  flex-wrap  justify-content-around">
+    </div>
+    <!-- nav end -->
+  
+ 
+   <!-- Footer -->
+<footer class="bg-dark text-white  d-flex  p-2 align-items-center  justify-content-between">
+  
+  <div id="simpleInfo">
+
+  </div>
+  <section class=" d-flex ">
+  
+  
+    <!-- LinkedIn -->
+    <a target="_blank" class="btn btn-outline-light btn-floating m-2 mt-2" href="https://www.linkedin.com/in/amjad-maqsouma-54bb91234/" role="button"
+    ><i class="fab fa-linkedin-in"></i
+  ></a>
+
+    <!-- Github -->
+    <a target="_blank" class="btn btn-outline-light btn-floating m-2 mt-2" href="https://github.com/amjadmak" role="button"
+      ><i class="fab fa-github"></i
+    ></a>
+  </section>
+
+</footer>
+<!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
