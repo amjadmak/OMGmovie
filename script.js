@@ -38,7 +38,7 @@ function aboutPage(){
   CONTAINER.innerHTML=''
   CONTAINER.innerHTML=` <div class='container custom-container' > 
   <h2> About OMG Movies</h2> 
-  <div class="text-dark"> This project was created as an assignment while studying web development at reCoded
+  <div > This project was created as an assignment while studying web development at reCoded
    The page is responsive and was styled using Bootstrap.
     The used method was functional programming where one function can serve different things according to the provided parameter.
     The API was used from <a href="https://www.themoviedb.org/">TMDB</a>. It was a funny craeting this project and hope you enjoy it!
@@ -106,7 +106,8 @@ const renderMovies = (movies, deleteContent) => {
         <img class="col-12" src="${nullImg(BACKDROP_BASE_URL + movie.backdrop_path)}" alt="${
       movie.title
     } poster">
-    <span class='info blue_flag row mx-auto'><span class='p-2'style="margin-right:45%">${handleNull(`${movieGenres[0]}`)}  </span> <span class='rating mx-auto'>${movie.vote_average}</span>
+    <span class='info blue_flag row mx-auto '><span class='p-2'style="margin-right:10%">${handleNull(`${movieGenres[0]}`)}  </span>
+     <span class='rating' style="margin-left:10%">${movie.vote_average}</span>
     </span>
        <span class="col text-center"> <h4>${movie.title}</h4></span>
        
@@ -129,17 +130,17 @@ const renderMovie = async (movie) => {
   CONTAINER.innerHTML = `
     <div class="row custom-container">
         <div class="col-md-4">
+
+
              <img id="movie-backdrop" src=${
-              nullImg(PROFILE_BASE_URL + movie.poster_path)
-             }>
+              nullImg(COMP_BASE_URL + movie.poster_path)
+             } style="height: 90%">
         </div>
         <div class="col-md-8">
         
-        <span ><h3>${movie.title}${'\xa0'.repeat(3)}<span> <img style="width:30px;" id="star" src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
-         <h3>${movie.vote_average}</h3></span>
-
-        </ul>
-        
+        <span class="d-flex justify-content-evenly" ><span class="mr-5"><h3>${movie.title}</h3></span><span><img style="width:30px;" id="star" src="./img/star.png">
+         ${movie.vote_average}</img></span>
+        </span>
             <p id="director"></p>
             <p><b>Language:</b> ${movie.original_language.toUpperCase()}</p>
             <p id="movie-release-date"><b>Release Date:</b> ${
@@ -147,24 +148,24 @@ const renderMovie = async (movie) => {
             }</p>
             <p id="movie-runtime"><b>Runtime:</b> ${handleNull(movie.runtime)} Minutes</p>
             <p ><b>Votes:</b> ${handleNull(movie.vote_count)}</p>
-            <h3>Overview:</h3>
+            <h3>Overview</h3>
             <p id="movie-overview">${handleNull(movie.overview)}</p>
         </div>
         </div>
         <div >
-            <h3>Actors:</h3>
+            <h3>Actors</h3>
             <ul id="listOfActors" class="list-unstyled d-flex"></ul>
 
-            <h3>Production Companies:</h3>
+            <h3>Production Companies</h3>
             <ul id="Companies" class="list-unstyled d-flex  p-5px m-5px"></ul>
-            <h3>Related Movies:</h3>
+            <h3>Related Movies</h3>
             <ul id="relatedMovies" class="list-unstyled d-flex align-items-center p-5px m-5px"></ul>
             </div>
             <div>
             <h3>Related Video</h3>
-            <iframe width="440" height="315"
+            <iframe width="440" height="315" allowfullscreen="allowfullscreen"
             
-src="${theTrailer}">
+src="${handleNull(theTrailer)}">
 </iframe>
 </div>
     </div>
@@ -401,17 +402,17 @@ const renderProductionCompanies = (arrOfComp, compsSection) => {
     const compDetails = await fetchLists(`company/${compId}`, '');
     CONTAINER.innerHTML = ``
     CONTAINER.innerHTML =`
-    <div class= "d-flex movie-card justify-content-center align-items-center" >
-        <div class="col-md-4 m-1">
+    <div class= "custom-container d-flex" >
+        <div class="col-md-5 m-3">
              <img id="comp-pic" style="width:250px" src=${
               nullImg(COMP_BASE_URL + compDetails.logo_path) 
              }>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6 m-5">
             <h2 id="comp-name" >${compDetails.name}</h2>
             <p id="comp-Info"> <b>Headquarters:</b> ${
               handleNull(compDetails.headquarters)
-            }<b></br>Website: ${handleNull(compDetails.homepage)}</p>
+            }<b></br>Website: ${han11dleNull(compDetails.homepage)}</p>
               </b></br><b>Origin Country:</b> ${compDetails.origin_country}</br>
             <b>Home Page:</b> ${handleNull(compDetails.homepage)}</p>
             <h3>Description:</h3>

@@ -146,14 +146,17 @@ footer{
 
 body{
     color: rgb(255, 255, 255);
-
+    font-family: 'Dosis', sans-serif;
    background-size:cover;
    background-repeat: no-repeat;
   background-attachment: fixed;
     
    background-image: url('./img/bg5.jpg');
 }
-
+h3{
+  margin: 5px;
+font-family: 'Shadows Into Light', cursive;
+}
 
 #movie-backdrop {
     width: 100%;
@@ -172,11 +175,11 @@ body{
   font-family: sans-serif;
   color: black;
     border-radius: 3%;
-    background-color: #fdfd96;
+    background-color: #E5CB9F;
     padding: 0.5%;
     margin: 1%;
     cursor: pointer;
-    opacity: 0.85;
+
     transition: all .2s ease-in-out; 
 }
 .movie-card:hover{
@@ -203,9 +206,9 @@ body{
   padding: 10px;
   background-image: linear-gradient(
     40deg,
-    #b2eeed 0%,
-    #e28ee4 45%,
-    #cfce6f 100%
+    #154645 0%,
+    #165664e8 45%,
+    #525124 100%
   );
   
 }
@@ -234,8 +237,10 @@ body{
 }
 
 .movie-card:hover .blue_flag {
-    display:block;
-    height: 9%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* height: 9%; */
     font-size: 18px;
    
     color: #fff;
@@ -253,8 +258,10 @@ footer{
     background-color:rgb(3, 10, 10);
 }
 
-h1, h2 ,h3, h4{
-  font-family: 'Trebuchet MS', sans-serif;
+h1, h2, h4, b{
+  /* font-family: 'Trebuchet MS', sans-serif;
+   */
+   font-family: 'Shadows Into Light', cursive;
 }
 
 @keyframes showHide {
