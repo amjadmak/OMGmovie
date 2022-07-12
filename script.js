@@ -213,7 +213,7 @@ const renderActors =  (actors, deleteContent) => {
     const movieDiv = document.createElement("div");
      movieDiv.classList.add('col-md-3','col-sm-6','movie-card' )  
     movieDiv.innerHTML = `
-        <img style= 'width:90%'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
+        <img style= 'height:90%'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
       actor.name
     } poster">
         <h3 class="text-center">${actor.name}</h3>`;
@@ -230,7 +230,7 @@ const handleNull = (data) => {
 }
 const nullImg = (imgPath) => {
   if (imgPath.includes("null")) {
-    return 'https://www.blueskysales.com/scs/extensions/SC/Manor/3.1.0/img/no_image_available.jpeg?resizeid=5&resizeh=1200&resizew=1200'
+    return './img/no-image.jpeg';
   } else {
     return imgPath
 }
@@ -292,7 +292,7 @@ const renderInvolvedMovies =  (movieslist, targetDiv) => {
     movieDiv.className = "MovieElement movie-card";
 
     movieDiv.innerHTML = `
-    <img style= "width:200px" src="${nullImg(PROFILE_BASE_URL + movieslist.poster_path)}" alt="${
+    <img style= "height:70%" src="${nullImg(PROFILE_BASE_URL + movieslist.poster_path)}" alt="${
       movieslist.title
 } poster">
         <h3 >${movieslist.title}</h3>`;
