@@ -414,7 +414,7 @@ const renderProductionCompanies = (arrOfComp, compsSection) => {
             <h2 id="comp-name" >${compDetails.name}</h2>
             <p id="comp-Info"> <b>Headquarters:</b> ${
               handleNull(compDetails.headquarters)
-            }<b></br>Website: ${hand1dleNull(compDetails.homepage)}</p>
+            }<b></br>Website: ${handleNull(compDetails.homepage)}</p>
               </b></br><b>Origin Country:</b> ${compDetails.origin_country}</br>
             <b>Home Page:</b> ${handleNull(compDetails.homepage)}</p>
             <h3>Description:</h3>
