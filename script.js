@@ -213,7 +213,7 @@ const renderActors =  (actors, deleteContent) => {
     const movieDiv = document.createElement("div");
      movieDiv.classList.add('col-md-3','col-sm-6','movie-card' )  
     movieDiv.innerHTML = `
-        <img style= 'height:90%'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
+        <img style= 'height:90%;width: 80%;'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
       actor.name
     } poster">
         <h3 class="text-center">${actor.name}</h3>`;
