@@ -101,9 +101,9 @@ const renderMovies = (movies, deleteContent) => {
     }
     
     const movieDiv = document.createElement("div");
-    movieDiv.classList.add('col-md-3','col-sm-5','movie-card', "d-grid")
+    movieDiv.classList.add('col-lg-3','col-md-5','col-sm-5','movie-card', "d-grid")
     movieDiv.innerHTML = ` 
-        <img class="col-12" src="${nullImg(BACKDROP_BASE_URL + movie.backdrop_path)}" alt="${
+        <img class="col-12" style="height:219px; width:215" src="${nullImg(BACKDROP_BASE_URL + movie.backdrop_path)}" alt="${
       movie.title
     } poster">
     <span class='info blue_flag row mx-auto '><span class='p-2'style="margin-right:10%">${handleNull(`${movieGenres[0]}`)}  </span>
@@ -128,7 +128,8 @@ const renderMovie = async (movie) => {
   const trailersList = await fetchLists(`movie/${movie.id}/videos`, '');
   const theTrailer = await buildTrailerUrl(trailersList.results);
   CONTAINER.innerHTML = `
-    <div class="row custom-container">
+ <div class="d-flex-column col-lg-12 col-md-10">
+    <div class="row d-flex-column custom-container">
         <div class="col-md-4">
 
 
@@ -152,7 +153,7 @@ const renderMovie = async (movie) => {
             <p id="movie-overview">${handleNull(movie.overview)}</p>
         </div>
         </div>
-        <div >
+        <div>
             <h3>Actors</h3>
             <ul id="listOfActors" class="list-unstyled d-flex"></ul>
 
@@ -161,13 +162,14 @@ const renderMovie = async (movie) => {
             <h3>Related Movies</h3>
             <ul id="relatedMovies" class="list-unstyled d-flex align-items-center p-5px m-5px"></ul>
             </div>
-            <div>
             <h3>Related Video</h3>
+            <div class="d-flex justify-content-center">
             <iframe width="440" height="315" allowfullscreen="allowfullscreen"
             
 src="${handleNull(theTrailer)}">
 </iframe>
 </div>
+    </div>
     </div>
     `;
     const listOfComps = document.querySelector("#Companies");
@@ -211,7 +213,7 @@ const renderActors =  (actors, deleteContent) => {
   if (deleteContent) CONTAINER.innerHTML = ``
   actors.map(async (actor) => {
     const movieDiv = document.createElement("div");
-     movieDiv.classList.add('col-md-3','col-sm-6','movie-card' )  
+     movieDiv.classList.add('col-lg-3','col-md-5','col-sm-5','movie-card' )  
     movieDiv.innerHTML = `
         <img style= 'height:90%;width: 80%;'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
       actor.name
@@ -243,6 +245,7 @@ const renderActor = async (actor) => {
 
 
    CONTAINER.innerHTML =`
+   <div class="d-flex-column col-lg-12 col-md-10">
     <div class="row custom-container">
         <div class="col-md-4">
              <img id="movie-backdrop" src=${
@@ -267,6 +270,7 @@ const renderActor = async (actor) => {
             <ul id="moviesOfActor" class="list-unstyled d-flex flex-wrap"></ul>
             </div></div>
           
+    </div>
     </div>`;
 
     const actorMovies = await  involvedMovies(`person`,actor.id, `movie_credits`)
