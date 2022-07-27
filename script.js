@@ -213,12 +213,12 @@ const renderActors =  (actors, deleteContent) => {
   if (deleteContent) CONTAINER.innerHTML = ``
   actors.map(async (actor) => {
     const movieDiv = document.createElement("div");
-     movieDiv.classList.add('col-lg-3','col-md-5','col-sm-5','movie-card' )  
+     movieDiv.classList.add('col-lg-3','col-md-5','col-sm-5','actor-card' )  
     movieDiv.innerHTML = `
         <img style= 'height:90%;width: 80%;'src="${nullImg(PROFILE_BASE_URL+ actor.profile_path)}" class=" mx-auto d-block" alt="${
       actor.name
     } poster">
-        <h3 class="text-center">${actor.name}</h3>`;
+        <h3 class=" actorName text-center ">${actor.name}</h3>`;
     movieDiv.addEventListener("click", () => {
       actorDetails(actor);
     });

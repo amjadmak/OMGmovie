@@ -157,6 +157,9 @@ h3{
   margin: 5px;
 font-family: 'Shadows Into Light', cursive;
 }
+.actorName{
+font-family: 'Shadows Into Light', cursive;
+}
 
 #movie-backdrop {
     width: 100%;
@@ -171,22 +174,27 @@ font-family: 'Shadows Into Light', cursive;
     margin: 24px 16px 0 0;
 }
 /* cards used for actors and movies elements */
-.movie-card{
+.movie-card, .actor-card{
+
   font-family: sans-serif;
   color: black;
     border-radius: 3%;
     background-color: #E5CB9F;
     padding: 0.5%;
-    margin: 1%;
+    margin: 2%;
     cursor: pointer;
-
+    word-wrap: break-word;
     transition: all .2s ease-in-out; 
 }
-.movie-card:hover{
+.actor-card{
+  display: flex;
+  flex-direction: column;
+}
+.movie-card:hover , .actor-card:hover{
     transform: scale(1.1); 
     box-shadow: rgb(209, 47, 60) 0px 5px 15px;
 }
-.movie-card img {
+.movie-card img , .actor-card img{
    
     background-color: rgb(85, 211, 233);
     margin: 1%;
